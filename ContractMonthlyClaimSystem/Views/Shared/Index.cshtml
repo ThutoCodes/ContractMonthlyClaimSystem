@@ -1,0 +1,33 @@
+﻿@model List<ContractMonthlyClaimSystem.Models.Claim>
+
+<h2>Lecturer Dashboard</h2>
+<p>Welcome to your dashboard. Below are your submitted claims:</p>
+
+<!-- Display claims in a table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Claim ID</th>
+            <th>Hours Worked</th>
+            <th>Hourly Rate</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Submission Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.ClaimId</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.HourlyRate</td>
+                <td>@claim.TotalAmount</td>
+                <td>@claim.Status</td>
+                <td>@claim.SubmissionDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="SubmitClaim" class="btn btn-primary">Submit a New Claim</a>

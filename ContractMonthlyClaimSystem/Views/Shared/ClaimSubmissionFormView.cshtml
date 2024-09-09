@@ -1,0 +1,11 @@
+﻿@model Claim
+<h2>Submit New Claim</h2>
+<form method="post" action="@Url.Action("SubmitClaim", "Lecturer")">
+    <label for="HoursWorked">Hours Worked</label>
+    <input type="number" name="HoursWorked" />
+
+    <label for="HourlyRate">Hourly Rate</label>
+    <input type="text" name="HourlyRate" value="200" readonly />
+
+    <input type="submit" value="Submit Claim" />
+</form>
